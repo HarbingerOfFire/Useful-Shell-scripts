@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #a shell script to install a second kernel to your system when run in the same directory as a kernel tarball as can be retrieved from kernel.org. Usefull for when you are messing with commands that may break your kernel.
-
+set -e
 echo -n 'searching for linux kernel...'
 kernel=$(find -maxdepth 1 -not -type d | grep "linux-" | awk -F '.' '{print "."$2"."$3"."$4}')
 echo found kernel $kernel
